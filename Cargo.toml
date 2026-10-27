@@ -1,0 +1,19 @@
+[package]
+name = "tg"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ureq = { version = "2.12", features = ["json"] }
+serde_json = "1"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
+
+[features]
+# Enables TG_API/TG_STATE/TG_CONFIG/TG_SESSION overrides. Only for tests/run.sh.
+testing = []

@@ -1,0 +1,11 @@
+[Unit]
+Description=tg Telegram bridge for Claude Code / Codex sessions
+After=network-online.target
+
+[Service]
+ExecStart=%h/.local/bin/tg daemon
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
